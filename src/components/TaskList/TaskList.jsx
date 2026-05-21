@@ -6,9 +6,9 @@ const TaskList = () => {
   const {empData} = useAuth();
   return (
     <div
-      id="tasklist"
-      className="flex  items-center justify-start gap-5 flex-nowrap h-[55%] w-full  mt-10 py-5 overflow-x-auto"
+      className="tasklist flex flex-col h-155 w-full my-10 gap-5 bg-white p-5 rounded-xl overflow-auto"
     >
+      <h2 className="text-xl font-bold pl-1">My Task</h2>
       {empData.tasks.map((task, index)=>{
         if(task ){
           return <NewTask key={index} task ={ task} />

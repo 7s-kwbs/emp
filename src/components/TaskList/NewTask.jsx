@@ -1,31 +1,20 @@
 import React from 'react'
+import ProgressBar from "../others/ProgressBar";
 
 const NewTask = ({task}) => {
   return (
-          <div className={`shrink-0 h-full w-75 p-5 rounded-xl
-          ${task.newTask ? "bg-blue-400":
-            task.active ? "bg-yellow-400":
-            task.completed ? "bg-green-400":
-            "bg-red-400"
-          }
-          `}>
-
-        <div className="flex justify-between items-center">
-          <h3 className="bg-red-600 text-sm px-3 py-1 rounded">{task.category}</h3>
-          <h4 className="text-sm">{task.taskDate}</h4>
-        </div>
-      <h2 className="mt-5 text-2xl font-semibold">{task.taskTitle}</h2>
-        <p className="text-sm mt-2">{task.taskDescription}</p>
-        {task.newTask?<button className='bg-blue-700 mt-4 py-1 px-2 text-sm rounded-lg active:scale-95'>Accept Task</button>:
-        task.completed ? <button className='bg-green-700 mt-4 py-1 px-2 text-sm rounded-lg active:scale-95'>Complete</button>:
-        task.active ? <div className='flex justify-between mt-4'>
-            <button className='bg-green-700 py-1 px-2 text-sm rounded-lg active:scale-95'>Mark as Completed</button>
-            <button className='bg-red-500 py-1 px-2 text-sm rounded-lg active:scale-95'>Mark as Failed</button>
-        </div>:
-         <button className='bg-red-700 mt-4 py-1 px-2 text-sm rounded-lg active:scale-95'>Failed</button>
-        
-        }
+    <div className=' w-full bg-white p-5 shrink-0 rounded-lg shadow-sm border border-gray-400'>
+      <div className='flex gap-2'>
+      <h1 className='text-lg font-sans font-bold'>{task.taskTitle}</h1>
+      <p className={`px-2  rounded-xl  my-1 font-semibold  text-[12px] ${task.priority === "high"?"bg-red-100 text-red-500 ": task.priority == 'medium' ? "bg-orange-100 text-orange-600" : "bg-green-100 text-green-600"} `}>{task.priority}</p>
       </div>
+      <p className=' text-gray-400 text-sm '>{task.taskDescription}</p>
+      <div className='flex gap-2 text-gray-400 text-sm'>
+        <p>Assigned by {task.assignedBy}</p>
+        <p>{task.taskDate} </p>
+      </div>
+      <ProgressBar value={task.progress} />
+    </div>
   )
 }
 

@@ -12,12 +12,13 @@ const Header = () => {
   }
  
   return (
-    <div className="flex items-center justify-between">
-      <h1 className="text-xl font-medium">
-        Hello <br />
-        <span className="text-3xl font-semibold mt-0 pt-0">{user.name}👍</span>
+    <div className="flex items-center justify-between ">
+      <h1 className="text-3xl text font-medium mt-10">
+        Hello, {user.name}👍
+        
+        <p className="text-sm font-normal text-gray-500">Here's what's happening with your tasks </p>
       </h1>
-      <button onClick={handleLogout} className="bg-red-600 text-white px-5 py-2 rounded-sm text-lg font-medium"> Log Out</button>
+      <button onClick={handleLogout} className="hover:bg-red-500 hover:text-white border/55 bg-white shadow-md px-5 py-2 rounded-sm active:scale-95 "> Log Out</button>
     </div>
   );
 };

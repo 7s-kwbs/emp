@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import AuthProvider from "../context/AuthProvider";
 import Login from "../pages/Login";
 import { ProtectedRoute } from "./ProtectedRoute";
@@ -7,6 +7,8 @@ import UserProfile from "../pages/UserProfile";
 import EmployeeDashboard from "../components/Dashboard/EmployeeDashboard";
 import AdminDashboard from "../components/Dashboard/AdminDashboard";
 import NotFound from "../pages/NotFound";
+import DashboardPage from "../pages/DashboardPage";
+import Profile from "../pages/Profile";
 
 export const AppRouter = () => {
   return (
@@ -24,7 +26,11 @@ export const AppRouter = () => {
 
           {/* admin routes */}
           <Route element={<ProtectedRoute allowedRole="admin" />}>
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path ='/admin' element={<AdminDashboard />}>
+              <Route index element={<Navigate to = 'dashboard' replace />} />
+              <Route path="dashboard" element={<DashboardPage />}/>
+              <Route path='profile' element={<Profile />} />
+            </Route>
           </Route>
 
           {/* shared protected routes */}

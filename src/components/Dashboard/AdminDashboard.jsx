@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/others/Header";
-import CreateTask from "../../components/others/CreateTask";
-import AllTask from "../../components/others/AllTask";
+import SideBar from "../SideBar";
+import { Outlet } from "react-router-dom";
 
 const AdminDashboard = () => {
-
   return (
-    <div className="px-10 bg-blue-100 min-h-screen ">
-       <Header />
+    <div className=" bg-blue-50 min-h-screen flex ">
+      <SideBar />
+      <div className="w-full">
+        <Header />
+        <Outlet />
+      </div>
     </div>
   );
 };

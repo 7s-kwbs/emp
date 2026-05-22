@@ -6,10 +6,8 @@ import AllTask from "../../components/others/AllTask";
 const AdminDashboard = () => {
 
   return (
-    <div className="h-screen w-full p-10 text-white">
+    <div className="px-10 bg-blue-100 min-h-screen ">
        <Header />
-        <CreateTask />
-        <AllTask />
     </div>
   );
 };

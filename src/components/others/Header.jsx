@@ -3,22 +3,32 @@ import { useAuth } from "../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const{user} = useAuth();
+  const { user } = useAuth();
   const { logout } = useAuth();
   const navigate = useNavigate();
-  const handleLogout =()=>{
+  const handleLogout = () => {
     logout();
-    navigate("/")
-  }
- 
+    navigate("/");
+  };
+
   return (
-    <div className="flex items-center justify-between ">
-      <h1 className="text-3xl text font-medium mt-10">
-        Hello, {user.name}👍
-        
-        <p className="text-sm font-normal text-gray-500">Here's what's happening with your tasks </p>
-      </h1>
-      <button onClick={handleLogout} className="hover:bg-red-500 hover:text-white border/55 bg-white shadow-md px-5 py-2 rounded-sm active:scale-95 "> Log Out</button>
+    <div className="flex items-center justify-between  ">
+      <div className="mt-5">
+        <h1 className=" text-3xl text font-medium ">
+          Hello, {user.name}👍
+        </h1>
+        <span className="text-sm font-normal text-gray-500">
+          Here's what's happening with your tasks{" "}
+        </span>
+      </div>
+      <div className=" mt-5 ">
+      <button
+        onClick={handleLogout}
+        className="hover:bg-red-500 hover:text-white border/55 bg-white shadow-md px-5 py-2 rounded-sm active:scale-95  "
+      >
+        Log Out
+      </button>
+      </div>
     </div>
   );
 };

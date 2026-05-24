@@ -1,7 +1,18 @@
 import React from 'react'
 import PrimaryButton from '../components/buttons/PrimaryButton'
+import Card from '../components/Card'
+import BarChart from '../components/charts/BarChart'
+import { PieChart } from '../components/charts/PieChart'
 
 const DashboardPage = () => {
+    const cards = [
+        {
+            title: "Total Tasks Assigned",
+            total: 148,
+            icon: "",
+            
+        }
+    ]
   return (
     <div className='p-5'>
         {/* title section */}
@@ -16,11 +27,16 @@ const DashboardPage = () => {
         </div>
         {/* card section */}
         <div>
-
+            <Card />
         </div>
         {/* Graph section */}
-        <div>
-  
+        <div className='flex flex-col md:flex-row'>
+            <div className='h-96 lg:h-125 w-full xl:w-2/3'>
+            <BarChart />
+            </div>
+            <div className='h-75 w-full xl:w-1/3 '>
+                <PieChart />
+            </div>
         </div>
         {/* Recent Activities */}
         <div>

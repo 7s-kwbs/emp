@@ -85,12 +85,12 @@ const employees = [
       {
         newTask: false,
         active: false,
-        completed: true,
-        overdue: false,
+        completed: false,
+        overdue: true,
         taskTitle: "Database Backup",
         taskDescription: "Take weekly database backup",
         taskDate: "2026-05-14",
-        deadline: "2026-05-15",
+        deadline: "2026-05-22",
         category: "Database",
         assignedBy: "Sagar",
         progress: 100,
@@ -174,8 +174,8 @@ const employees = [
         overdue: false,
         taskTitle: "Deploy App",
         taskDescription: "Deploy latest build to production",
-        taskDate: "2026-05-10",
-        deadline: "2026-05-11",
+        taskDate: "2026-05-18",
+        deadline: "2026-05-20",
         category: "Deployment",
         assignedBy: "Rohan",
         progress: 100,
@@ -401,4 +401,6 @@ export const authenticateUser = (email, password) => {
   if (adm) return { ...adm, role: "admin" };
 
   return null;
+
+
 };

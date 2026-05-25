@@ -54,7 +54,7 @@ const BarChart = () => {
     }
   return (
 
-        <div  className="relative w-full h-full ">
+        <div  className=" border w-full h-100 ">
             <Bar options={options} data={BarchartData} />
         </div>
     );

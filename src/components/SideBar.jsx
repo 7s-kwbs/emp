@@ -5,8 +5,8 @@ import Logout from "./buttons/Logout";
 const SideBar = () => {
 
   return (
-    <div
-      className={`hidden  md:flex pt-5 border-r border-gray-300  flex-col bg-white w-96 h-screen`}
+    <div 
+      className={`hidden  md:flex pt-5 border-r border-gray-300  flex-col bg-white w-48 lg:w-64 min-h-screen h-full`}
     >
       {/* header */}
       <div className=" pr-5 pl-2 pb-3 border-b border-gray-300 flex gap-3 items-center">

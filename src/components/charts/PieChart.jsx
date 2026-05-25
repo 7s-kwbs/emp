@@ -17,7 +17,7 @@ export const PieChart = () => {
         ]
     }
   return (
-    <div className="relative w-full h-full ">
+    <div className=' h-75'>
         <Pie options={options} data={PieChartData} />
     </div>
   )
